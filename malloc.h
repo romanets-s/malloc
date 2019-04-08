@@ -14,16 +14,17 @@
 #ifndef MALLOC_H
 # define MALLOC_H
 # include <stdlib.h>
-#include <sys/types.h>
+# include <sys/types.h>
 # include <sys/mman.h>
+# include <unistd.h>
 
-# define TINY_SIZE 1024
+# define TINY_SIZE (2 * getpagesize())
 # define SMALL_SIZE (TINY_SIZE * 4)
 # define BLOCKS_LIMIT 100
 
 typedef struct		s_block
 {
-	int				type;
+	int				type; // ?
 	void			*ptr;
 	size_t			size;
 	struct s_block	*prev;
@@ -38,13 +39,11 @@ typedef struct		s_malloc
 	size_t			tiny_used;
 	t_block			*small;
 	size_t			small_len;
-	size_t			tiny_used;
+	size_t			small_used;
 	t_block			*large;
 	size_t			large_len;
 	size_t			large_used;
 }					t_malloc;
-
-
 
 void				*malloc(size_t size);
 void				*realloc(void *ptr, size_t size);

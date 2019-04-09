@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/sromanet/malloc/main.c
+malloc.h
+/Users/sromanet/malloc/malloc.h
+stdio.h
+-
+
+/Users/sromanet/malloc/malloc.c
+malloc.h
+/Users/sromanet/malloc/malloc.h
+
+/Users/sromanet/malloc/malloc.h
+stdlib.h
+-
+sys/types.h
+-
+sys/mman.h
+-
+unistd.h
+-
+

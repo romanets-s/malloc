@@ -6,6 +6,6 @@ int main()
 {
 	void *ptr;
 
-	ptr = malloc(1);
+	ptr = malloc(42);
 	printf("%p\n", ptr);
 }

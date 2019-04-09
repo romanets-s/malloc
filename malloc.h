@@ -18,13 +18,18 @@
 # include <sys/mman.h>
 # include <unistd.h>
 
-# define TINY_SIZE (2 * getpagesize())
-# define SMALL_SIZE (TINY_SIZE * 4)
+//# define TINY_SIZE (size_t)(2 * getpagesize())
+//# define SMALL_SIZE (size_t)(TINY_SIZE * 4)
+
+# define TINY_SIZE (size_t)(getpagesize()/2)
+# define SMALL_SIZE (size_t)(TINY_SIZE * 4)
+
+
 # define BLOCKS_LIMIT 100
 
 typedef struct		s_block
 {
-	int				type; // ?
+	size_t			type; // ?
 	void			*ptr;
 	size_t			size;
 	struct s_block	*prev;

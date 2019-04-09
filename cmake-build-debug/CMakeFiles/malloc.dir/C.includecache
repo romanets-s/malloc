@@ -6,12 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/sromanet/malloc/main.c
-malloc.h
-/Users/sromanet/malloc/malloc.h
-stdio.h
--
-
 /Users/sromanet/malloc/malloc.c
 malloc.h
 /Users/sromanet/malloc/malloc.h
